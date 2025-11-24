@@ -52,7 +52,7 @@ export default function Footer({ dataDesa }) {
           ></iframe>
         </div>
       </div>
-      <div className="flex justify-between items-center mt-10">
+      <div className="flex justify-between items-end mt-10">
         <div className="flex justify-start items-center">
           <p className="pe-3 border-r border-white">
             <i className="bi-c-circle me-1"></i>Copyright 2025
