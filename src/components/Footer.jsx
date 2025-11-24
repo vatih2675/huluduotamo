@@ -16,15 +16,18 @@ export default function Footer({ dataDesa }) {
               </h3>
             </div>
           </div>
-          <div className="w-full">
-            <p>
-              <i className="bi-telephone me-2"></i>
-              {dataDesa.telpon}
-            </p>
-            <p>
+          <div className="w-full flex flex-col">
+            <a
+              href={`https://wa.me/62${dataDesa.telpon}`}
+              target="_blank"
+              className="hover:text-red-300 transition-all duration-300 cursor-pointer"
+            >
+              <i className="bi-telephone me-2"></i>0{dataDesa.telpon}
+            </a>
+            <a href={`maiilto:${dataDesa.email}`} target="_blank">
               <i className="bi-envelope-at me-2"></i>
               {dataDesa.email}
-            </p>
+            </a>
           </div>
         </div>
         <div className=" w-full">
@@ -36,12 +39,12 @@ export default function Footer({ dataDesa }) {
               className="bi-facebook text-3xl hover:scale-120 transition-all duration-300"
             ></a>
             <a
-              href={`https://instagram.com/`}
+              href={`https://instagram.com/${dataDesa.sosmed.instagram}`}
               target="_blank"
               className="bi-instagram text-3xl hover:scale-120 transition-all duration-300"
             ></a>
             <a
-              href={`https://tiktok.com/`}
+              href={`https://tiktok.com/${dataDesa.sosmed.tiktok}`}
               target="_blank"
               className="bi-tiktok text-3xl hover:scale-120 transition-all duration-300"
             ></a>

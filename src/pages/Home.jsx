@@ -1,14 +1,16 @@
 import { NavLink } from "react-router-dom";
 import kantorDesa from "/kantor-desa.jpg";
 import logoPutih from "/logo-putih.png";
-import kepalaDesa from "/avatar/kepala-desa.png";
+import kepalaDesa from "/avatar/kades.jpeg";
 
 export default function Home({ halaman, dataDesa, dataGaleri, dataProduk }) {
   return (
     <section className="w-full">
-      <div className="relative w-full overflow-auto">
-        <img src={kantorDesa} alt={halaman} className="w-full" />
-        <div className="absolute rounded-4xl p-10 bg-black/50 z-1 top-50 bottom-50 left-50 right-50 text-white flex flex-col justify-between shadow-black/20 shadow-lg">
+      <div
+        className="w-full overflow-auto flex justify-center items-center shadow-black/20 shadow-xl"
+        id="hero"
+      >
+        <div className="rounded-4xl p-10 bg-black/50 text-white flex flex-col justify-between shadow-black/20 shadow-lg">
           <img src={logoPutih} alt="Logo" className="w-30 mx-auto mb-5" />
           <h1 className="text-center text-6xl uppercase font-bold">
             Desa {dataDesa.nama}
@@ -36,7 +38,7 @@ export default function Home({ halaman, dataDesa, dataGaleri, dataProduk }) {
                     <p className="text-sm mt-3">Keuangan Desa</p>
                 </NavLink>
             </div> */}
-      <div className="w-full p-20 bg-white">
+      <div className="w-full p-20 cursor-default pointer-events-none">
         <h1 className="text-center text-3xl font-black text-red-700 mb-10">
           SELAMAT DATANG
         </h1>
@@ -53,15 +55,17 @@ export default function Home({ halaman, dataDesa, dataGaleri, dataProduk }) {
             </p>
             <p className="text-justify mb-3">
               Dengan penuh rasa syukur, saya menyambut seluruh warga dan
-              pengunjung di website resmi Desa Digital. Website ini kami
-              hadirkan sebagai wujud keterbukaan informasi dan upaya dalam
-              memajukan desa menuju kemandirian berbasis teknologi.
+              pengunjung di website resmi{" "}
+              <span className="text-red-700">Desa {dataDesa.nama}</span>.
+              Website ini kami hadirkan sebagai wujud keterbukaan informasi dan
+              upaya dalam memajukan desa menuju kemandirian berbasis teknologi.
             </p>
             <p className="text-justify mb-3">
               Sebagai Kepala Desa, saya bersama seluruh perangkat desa
-              berkomitmen untuk membangun Desa Digital yang mandiri, maju, dan
-              berdaya saing dengan memanfaatkan teknologi sebagai pilar utama
-              pembangunan.
+              berkomitmen untuk membangun{" "}
+              <span className="text-red-700">Desa {dataDesa.nama}</span> yang
+              mandiri, maju, dan berdaya saing dengan memanfaatkan teknologi
+              sebagai pilar utama pembangunan.
             </p>
             <p className="text-justify mb-3">
               Melalui platform ini, kami berharap dapat memberikan kemudahan
@@ -73,27 +77,36 @@ export default function Home({ halaman, dataDesa, dataGaleri, dataProduk }) {
             <p className="text-justify">
               Wassalamu’alaikum warahmatullahi wabarakatuh.
             </p>
-            <h3 className="text-lg font-bold mt-10 underline">Kakashi</h3>
-            <p className="text-justify">Kepala Desa {dataDesa.nama}</p>
           </div>
-          <img src={kepalaDesa} alt="Kepala Desa" className="w-50" />
+          <div className="w-4/12">
+            <img
+              src={dataDesa.avatar}
+              alt="Kepala Desa"
+              className="w-full shadow-black/20 shadow-lg"
+            />
+            <div className="w-full">
+              <h3 className="text-lg text-end font-bold text-red-700 uppercase mt-3 underline">
+                {dataDesa.kepala}
+              </h3>
+              <p className="text-end">Kepala Desa {dataDesa.nama}</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="w-full p-20 bg-gray-200">
         <h1 className="text-center text-3xl font-black text-red-700 mb-10">
           GALERI
         </h1>
-        <div className="grid grid-cols-3 justify-items-center gap-5 px-20">
+        <div className="flex flex-wrap justify-center items-start px-20">
           {dataGaleri.map(({ judul, keterangan, gambar }, index) => (
-            <div
-              key={index}
-              className="w-full rounded-xl overflow-auto transition-all duration-200 hover:scale-110 cursor-pointer hover:shadow-black/20 hover:shadow-lg bg-[url('/public/galeri/1.jpg)] bg-origin-content bg-center bg-no-repeat bg-auto"
-            >
-              <img
-                src={gambar}
-                alt=""
-                className="h-full bg-origin-content bg-center bg-no-repeat bg-auto"
-              />
+            <div key={index} className="w-4/12 p-2">
+              <div className="w-full rounded-xl overflow-auto transition-all duration-300 hover:scale-110 cursor-pointer hover:shadow-black/20 hover:shadow-lg bg-[url('/public/galeri/1.jpg)] bg-origin-content bg-center bg-no-repeat bg-auto">
+                <img
+                  src={gambar}
+                  alt=""
+                  className="h-full bg-origin-content bg-center bg-no-repeat bg-auto"
+                />
+              </div>
             </div>
           ))}
         </div>

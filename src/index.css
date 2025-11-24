@@ -13,3 +13,12 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#hero{
+  width: 100%;
+  height: 500px;
+  background-image: url('../public/kantor-desa.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
