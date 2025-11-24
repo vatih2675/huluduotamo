@@ -1,17 +1,15 @@
 import { NavLink } from "react-router-dom";
 import kantorDesa from "/kantor-desa.jpg";
+import logoPutih from "/logo-putih.png";
+import kepalaDesa from "/kepala-desa.png";
 
-export default function Home({ halaman, dataDesa }) {
+export default function Home({ halaman, dataDesa, dataGaleri }) {
   return (
     <section className="w-full">
       <div className="relative w-full overflow-auto">
         <img src={kantorDesa} alt={halaman} className="w-full" />
         <div className="absolute rounded-4xl p-10 bg-black/50 z-1 top-50 bottom-50 left-50 right-50 text-white flex flex-col justify-between shadow-black/20 shadow-lg">
-          <img
-            src={`../../public/${dataDesa.logo2}`}
-            alt=""
-            className="w-30 mx-auto mb-5"
-          />
+          <img src={logoPutih} alt="Logo" className="w-30 mx-auto mb-5" />
           <h1 className="text-center text-6xl uppercase font-bold">
             Desa {dataDesa.nama}
           </h1>
@@ -78,11 +76,7 @@ export default function Home({ halaman, dataDesa }) {
             <h3 className="text-lg font-bold mt-10 underline">Kakashi</h3>
             <p className="text-justify">Kepala Desa {dataDesa.nama}</p>
           </div>
-          <img
-            src="../../public/kepala-desa.png"
-            alt="Kepala Desa"
-            className="w-50"
-          />
+          <img src={kepalaDesa} alt="Kepala Desa" className="w-50" />
         </div>
       </div>
       <div className="w-full p-20 bg-gray-200">
@@ -90,27 +84,18 @@ export default function Home({ halaman, dataDesa }) {
           GALERI
         </h1>
         <div className="grid grid-cols-3 justify-items-center gap-5 px-20">
-          <div className="w-full rounded-xl overflow-auto transition-all duration-200 hover:scale-110 cursor-pointer hover:shadow-black/20 hover:shadow-lg bg-[url('/public/galeri/1.jpg)] bg-origin-content bg-center bg-no-repeat bg-auto">
-            <img
-              src="../../public/galeri/1.jpg"
-              alt=""
-              className="h-full bg-origin-content bg-center bg-no-repeat bg-auto"
-            />
-          </div>
-          <div className="w-full rounded-xl overflow-auto transition-all duration-200 hover:scale-110 cursor-pointer hover:shadow-black/20 hover:shadow-lg bg-[url('/public/galeri/2.jpg)] bg-origin-content bg-center bg-no-repeat bg-auto">
-            <img
-              src="../../public/galeri/2.jpg"
-              alt=""
-              className="h-full bg-origin-content bg-center bg-no-repeat bg-auto"
-            />
-          </div>
-          <div className="w-full rounded-xl overflow-auto transition-all duration-200 hover:scale-110 cursor-pointer hover:shadow-black/20 hover:shadow-lg bg-[url('/public/galeri/3.jpg)] bg-origin-content bg-center bg-no-repeat bg-auto">
-            <img
-              src="../../public/galeri/3.jpg"
-              alt=""
-              className="h-full bg-origin-content bg-center bg-no-repeat bg-auto"
-            />
-          </div>
+          {dataGaleri.map(({ judul, keterangan, gambar }, index) => (
+            <div
+              key={index}
+              className="w-full rounded-xl overflow-auto transition-all duration-200 hover:scale-110 cursor-pointer hover:shadow-black/20 hover:shadow-lg bg-[url('/public/galeri/1.jpg)] bg-origin-content bg-center bg-no-repeat bg-auto"
+            >
+              <img
+                src={gambar}
+                alt=""
+                className="h-full bg-origin-content bg-center bg-no-repeat bg-auto"
+              />
+            </div>
+          ))}
         </div>
       </div>
       <div className="w-full p-20 bg-white">

@@ -4,3 +4,12 @@
 ::-webkit-scrollbar{
   display: none;
 }
+
+#pageHeader{
+  width: 100vw;
+  height: 200px;
+  background-image: url('../public/sawah.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

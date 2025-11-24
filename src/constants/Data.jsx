@@ -17,3 +17,25 @@ export const dataDesa = {
     tiktok: "",
   },
 };
+
+import gambar1 from "/galeri/1.jpg";
+import gambar2 from "/galeri/2.jpg";
+import gambar3 from "/galeri/3.jpg";
+
+export const dataGaleri = [
+  {
+    judul: "Judul Galeri",
+    keterangan: "Keterangan",
+    gambar: gambar1,
+  },
+  {
+    judul: "Judul Galeri",
+    keterangan: "Keterangan",
+    gambar: gambar2,
+  },
+  {
+    judul: "Judul Galeri",
+    keterangan: "Keterangan",
+    gambar: gambar3,
+  },
+];
