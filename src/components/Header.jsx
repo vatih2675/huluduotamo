@@ -39,7 +39,7 @@ export default function Header({ dataDesa, halaman, changeHalaman }) {
         >
           Profil Desa
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/layanan"
           onClick={() => changeHalaman("Layanan")}
           className={
@@ -71,7 +71,7 @@ export default function Header({ dataDesa, halaman, changeHalaman }) {
           }
         >
           Mari Jo Ka {dataDesa.nama}
-        </NavLink>
+        </NavLink> */}
       </div>
     </header>
   );

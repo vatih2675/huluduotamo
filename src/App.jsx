@@ -1,5 +1,5 @@
 // import logo from '/vite.svg'
-import { dataDesa, dataGaleri } from "./constants/Data.jsx";
+import { dataDesa, dataGaleri, dataProduk } from "./constants/Data.jsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -33,7 +33,9 @@ function App() {
         />
         <Route
           path={"/profil-desa"}
-          element={<Profil halaman={halaman} dataDesa={dataDesa} />}
+          element={
+            <Profil halaman={halaman} dataDesa={dataDesa} dataProduk={dataProduk} />
+          }
         />
       </Routes>
       <Footer dataDesa={dataDesa} />

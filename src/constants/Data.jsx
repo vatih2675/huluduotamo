@@ -18,24 +18,54 @@ export const dataDesa = {
   },
 };
 
-import gambar1 from "/galeri/1.jpg";
-import gambar2 from "/galeri/2.jpg";
-import gambar3 from "/galeri/3.jpg";
+// Galeri
+import galeri1 from "/galeri/1.jpg";
+import galeri2 from "/galeri/2.jpg";
+import galeri3 from "/galeri/3.jpg";
 
 export const dataGaleri = [
   {
     judul: "Judul Galeri",
     keterangan: "Keterangan",
-    gambar: gambar1,
+    gambar: galeri1,
   },
   {
     judul: "Judul Galeri",
     keterangan: "Keterangan",
-    gambar: gambar2,
+    gambar: galeri2,
   },
   {
     judul: "Judul Galeri",
     keterangan: "Keterangan",
-    gambar: gambar3,
+    gambar: galeri3,
   },
 ];
+
+// UMKM
+import umkm1 from "/umkm/1.jpg";
+import umkm2 from "/umkm/2.png";
+import umkm3 from "/umkm/3.jpg";
+
+export const dataProduk = [
+  {
+    judul: "Cokelat Bubuk",
+    harga: 35000,
+    owner: "Bpk. Yusron",
+    telpon: "81234567890",
+    gambar: umkm1
+  },
+  {
+    judul: "Keripik Nanas",
+    harga: 15000,
+    owner: "Bpk. Agus",
+    telpon: "81234567890",
+    gambar: umkm2
+  },
+  {
+    judul: "Kopi Hitam Bubuk",
+    harga: 25000,
+    owner: "Ibu Lastri",
+    telpon: "81234567890",
+    gambar: umkm3
+  },
+]
