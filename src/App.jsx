@@ -28,13 +28,18 @@ function App() {
               halaman={halaman}
               dataDesa={dataDesa}
               dataGaleri={dataGaleri}
+              dataProduk={dataProduk}
             />
           }
         />
         <Route
           path={"/profil-desa"}
           element={
-            <Profil halaman={halaman} dataDesa={dataDesa} dataProduk={dataProduk} />
+            <Profil
+              halaman={halaman}
+              dataDesa={dataDesa}
+              dataProduk={dataProduk}
+            />
           }
         />
       </Routes>

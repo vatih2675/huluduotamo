@@ -3,7 +3,7 @@ import kantorDesa from "/kantor-desa.jpg";
 import logoPutih from "/logo-putih.png";
 import kepalaDesa from "/avatar/kepala-desa.png";
 
-export default function Home({ halaman, dataDesa, dataGaleri }) {
+export default function Home({ halaman, dataDesa, dataGaleri, dataProduk }) {
   return (
     <section className="w-full">
       <div className="relative w-full overflow-auto">
@@ -122,6 +122,29 @@ export default function Home({ halaman, dataDesa, dataGaleri }) {
         <h1 className="text-center text-3xl font-black text-red-700 mb-10">
           PRODUK UMKM
         </h1>
+        <div className="flex justify-center items-start flex-wrap">
+          {dataProduk.map(({ judul, harga, owner, telpon, gambar }, index) => (
+            <div key={index} className="w-3/12 p-3">
+              <div className="w-full rounded-xl border border-gray-200 overflow-hidden shadow-black/20 shadow-md hover:scale-110 transition-all duration-300">
+                <img src={gambar} alt={judul} className="w-full" />
+                <div className="bg-white w-full p-3 flex justify-between items-center">
+                  <div className="flex flex-col cursor-default">
+                    <h1 className="font-bold">{judul}</h1>
+                    <p>Rp. {harga}</p>
+                  </div>
+                  <a
+                    href={`https://wa.me/62${telpon}`}
+                    target="_blank"
+                    className="text-xs bg-red-500 hover:bg-red-700 transition-all duration-300 text-white px-2 py-1 rounded-sm"
+                    title={`Hubungi WA ${owner} - 0${telpon}`}
+                  >
+                    Beli
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
