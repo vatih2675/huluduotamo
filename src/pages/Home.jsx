@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import kantorDesa from "/kantor-desa.jpg";
 import logoPutih from "/logo-putih.png";
-import kepalaDesa from "/kepala-desa.png";
+import kepalaDesa from "/avatar/kepala-desa.png";
 
 export default function Home({ halaman, dataDesa, dataGaleri }) {
   return (
