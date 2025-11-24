@@ -97,7 +97,7 @@ export default function Home({ halaman, dataDesa, dataGaleri, dataProduk }) {
         <h1 className="text-center text-3xl font-black text-red-700 mb-10">
           GALERI
         </h1>
-        <div className="flex flex-wrap justify-center items-start px-20">
+        <div className="flex flex-wrap justify-center items-center px-20">
           {dataGaleri.map(({ judul, keterangan, gambar }, index) => (
             <div key={index} className="w-4/12 p-2">
               <div className="w-full rounded-xl overflow-auto transition-all duration-300 hover:scale-110 cursor-pointer hover:shadow-black/20 hover:shadow-lg bg-[url('/public/galeri/1.jpg)] bg-origin-content bg-center bg-no-repeat bg-auto">
